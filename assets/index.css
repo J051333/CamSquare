@@ -1,0 +1,116 @@
+.bg {
+    z-index: -1;
+}
+
+canvas#canv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/**:not(:empty) {*/
+/*    color: transparent;*/
+/*}*/
+
+#menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 440px;
+    width: 420px;
+    color: black;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 0 25px 5px black;
+
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 1em;
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    stroke: rgba(235, 75, 75, 1);
+    transition-duration: 100ms;
+}
+
+#close:hover {
+    stroke: rgba(170, 20, 20, 1);
+}
+
+#close:active {
+    stroke: rgba(25, 0, 0, 0.75);
+}
+
+#menu-title {
+    width: 100%;
+    height: 10%;
+
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#menu .options-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.float-option input {
+    float: right;
+    width: 45%
+}
+
+.float-option {
+    margin: 10px 10px 10px 10px
+}
+
+.radio-option {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr 1fr 3fr;
+}
+
+.radio-option label {
+    padding-left: 0.25em;
+}
+
+.apply-btn {
+    position: absolute;
+    bottom: 0;
+    height: 8%;
+    width: 100%;
+    background-color: rgba(17, 127, 79, 0.5);
+    border: none;
+    border-top: 2px outset rgba(12, 94, 59, 0.5);
+    font-weight: bold;
+
+    transition-duration: 0.2s;
+}
+
+.apply-btn:hover {
+    background-color: rgba(17, 127, 79, 0.69);
+    border-top: 2px outset rgba(12, 94, 59, 0.75);
+}
+
+.apply-btn:active {
+    background-color: rgba(14, 110, 68, 0.8);
+    border-top: 2px outset rgba(12, 94, 59, 1);
+}
+
+.full-bg-blur {
+    position: absolute;
+    background-color: #FFFFFF3F;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: Quicksand, sans-serif;
+}
