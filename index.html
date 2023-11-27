@@ -4,7 +4,7 @@ layout: none
 
 <head>
     <title>Unessay</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@ layout: none
 <div id="menu" hidden>
     <div class="full-bg-blur">
         <svg width="10%" height="10%" id="close">
-            <circle cx="50%" cy="50%" r="30%"  stroke-width="10%" fill="none"/>
+            <circle cx="50%" cy="50%" r="30%" stroke-width="10%" fill="none"/>
             <line x1="40%" y1="40%" x2="60%" y2="60%" stroke-width="10%" stroke-linecap="round"/>
             <line x1="40%" y1="60%" x2="60%" y2="40%" stroke-width="10%" stroke-linecap="round"/>
         </svg>
@@ -26,34 +26,61 @@ layout: none
             <div class="options-container">
                 <div class="float-option">
                     <label for="basecolor" id="basecolor-label">Base Color</label>
-                    <input type="color" id="basecolor" name="basecolor" value="#3F51B0">
+                    <div class="input">
+                        <input type="checkbox" id="do-basecolor" name="do-basecolor" value="checked">
+                        <input type="color" id="basecolor" name="basecolor" value="#3F51B0">
+                    </div>
                 </div>
 
                 <div class="float-option">
                     <label for="bgcolor" id="bgcolor-label">Background Color</label>
-                    <input type="color" id="bgcolor" name="bgcolor" value="#3F51B0">
+                    <div class="input">
+                        <input type="checkbox" id="do-bgcolor" name="do-bgcolor">
+                        <input type="color" id="bgcolor" name="bgcolor" value="#3F51B0">
+                    </div>
+                </div>
+
+                <div class="float-option">
+                    <label id="num-cell-label">Number of Cells</label>
+
+                    <div class="input multi-text">
+                        <label for="x" id="x-label">X: </label>
+                        <input type="number" id="x" name="x" value="25">
+
+                        <label for="y" id="y-label">Y: </label>
+                        <input type="number" id="y" name="y" value="15">
+                    </div>
+                </div>
+
+                <div class="non-float-option">
+                    <div class="label-container">
+                        <label for="speed">Speed</label>
+                    </div>
+                    <div class="input menu-slider">
+                        <input type="range" id="speed" name="speed" min="1" max="100" value="20">
+                    </div>
                 </div>
 
                 <div class="radio-option">
-                    <input type="radio" id="time" name="texttype" value="time" checked>
+                    <input type="radio" id="time" name="texttype" class="input" value="time" checked>
                     <label for="time" id="time-label">Time</label>
-                    <input type="radio" id="text" name="texttype" value="text">
+                    <input type="radio" id="text" name="texttype" class="input" value="text">
                     <label for="text" id="text-label">Text</label>
-                    <input type="radio" id="notext" name="texttype" value="notext">
+                    <input type="radio" id="notext" name="texttype" class="input" value="notext">
                     <label for="notext" id="notext-label">None</label>
                 </div>
 
                 <div id="display-text-box" class="float-option" hidden>
                     <label for="text-box" id="text-box-label">Text</label>
-                    <input type="text" id="text-box" name="text-box">
+                    <input type="text" id="text-box" name="text-box" class="input">
                 </div>
 
-                <div id="display-text-color" class="float-option" hidden>
+                <div id="display-text-color" class="float-option">
                     <label for="textcolor" id="textcolor-label">Text Color</label>
-                    <input type="color" id="textcolor" name="textcolor" value="#3F51B0">
+                    <input type="color" id="textcolor" name="textcolor" value="#000000" class="input">
                 </div>
             </div>
-            <input type="submit" value="Apply" class="apply-btn"  id="apply">
+            <input type="submit" value="Apply" class="apply-btn" id="apply">
         </form>
     </div>
 </div>
@@ -61,3 +88,4 @@ layout: none
 <canvas id="canv"></canvas>
 <video id="webcam" class="bg" autoplay></video>
 <canvas id="vid-canvas" class="bg"></canvas>
+<canvas id="store-canvas"></canvas>
